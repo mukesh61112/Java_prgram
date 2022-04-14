@@ -39,7 +39,7 @@ class SubarrayWithGivenSum
              for( int j=i;j<n;j++)
              {
                  sum=sum+arr[j];
-             
+
                  if(sum>s)
                      break;
                  if(sum==s)
