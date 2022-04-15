@@ -7,8 +7,8 @@ public class Array_MissingNumINNRange {
     {
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        int arr[]=new int[n];
-        for(int i=1;i<=(n-1);i++)
+        int arr[]=new int[n-1];
+        for(int i=0;i<(n-1);i++)
              arr[i]=sc.nextInt();
         FindMissingNum obj=new FindMissingNum();
            int ans=obj.findMissingNum(arr,n);
@@ -18,26 +18,38 @@ public class Array_MissingNumINNRange {
     }
 }
 class FindMissingNum{
-    static int findMissingNum(int arr[],int n)
+    int findMissingNum(int[] arr,int n)
     {
+         /*   int brr[]=new int [n];
+            for(int j=0;j<n;j++)
+                 brr[j]=j+1;
 
-        for(int i=1;i<=n;i++)
-        {
-            int k=0;
-            for(int j=1;j<=(n-1);j++)
+            for(int i=0;i<(n-1);i++)
             {
-                if(arr[j]==i)
-                {
-                    k=1;
-                    break;
+                for(int j=0;j<n;j++) {
+                    if(brr[j]==arr[i])
+                    {
+
+                        brr[j]=-1;
+                        break;
+                    }
                 }
             }
-            if(k==0)
-            {
-                return i;
 
-            }
+            for(int j=0;j<n;j++)
+            {
+
+                 if(brr[j]!=-1)
+                     return brr[j];
+
         }
-        return -1;
+        return -1;  */
+        int brr[]=new int [n];
+        int sum1=0,sum2=0;
+        for(int j=1;j<=n;j++)
+             sum1=sum1+j;
+        for(int i=0;i<(n-1);i++)
+            sum2=sum2+arr[i];
+        return sum1-sum2;
     }
 }
