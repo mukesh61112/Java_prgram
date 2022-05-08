@@ -8,12 +8,12 @@ class FindPrimeNumber {
         int flag = 0;
         System.out.println("Prime numbers  between " + number1 + " and " + number2 + " are= ");
         for (int i = number1; i <= number2; ++i) {
+            flag=0;
             for (int j = 2; j <= number1 / 2; ++j) {
                 if (i % j == 0) {
                     flag = 1;
                     break;
-                } else
-                    flag = 0;
+                }
             }
             if (flag == 0) {
                 System.out.println(i);
